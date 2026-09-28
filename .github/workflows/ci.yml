@@ -25,6 +25,8 @@ jobs:
         run: make web
       - name: Build EPUB editions
         run: make epub
+      - name: Validate Kindle profile
+        run: make kindle
       - name: Build PDF editions
         run: make pdf
       - name: Verify EPUB and PDF artifacts
