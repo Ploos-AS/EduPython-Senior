@@ -70,7 +70,7 @@ file.write("This was written by Python.\n")
 
 writes text to the file.
 
-Notice \`\n\`.
+Notice the newline escape sequence.
 
 \`write()\` does not automatically add a newline in the way that \`print()\` normally does.
 
@@ -221,7 +221,7 @@ You can now:
 - open a file with \`"w"\`
 - explain that \`"w"\` creates or replaces a file
 - write text with \`write()\`
-- add newlines with \`\n\`
+- add newlines with the newline escape sequence
 - convert numbers to text before writing
 - write items from a list
 - read a written file back for verification
