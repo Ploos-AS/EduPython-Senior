@@ -27,3 +27,4 @@ content/en/m06/02-parameters.md
 content/en/m06/03-return.md
 content/en/m06/04-functions-with-if-for.md
 content/en/m06/05-small-program.md
+content/en/m06/06-test-function.md
