@@ -1,6 +1,6 @@
 # EduPython-Senior Roadmap
 
-Status: M0 Foundation **PASS** · M1 First instructions **PASS** · M2 Variables **PASS** · M3 Input **PASS** · M4 Decisions **PASS**. M5 Loops is the active milestone.
+Status: M0 Foundation **PASS** · M1 First instructions **PASS** · M2 Variables **PASS** · M3 Input **PASS** · M4 Decisions **PASS** · M5 Loops **PASS**. M6 Functions is the active milestone.
 
 ## M0 — Foundation
 
