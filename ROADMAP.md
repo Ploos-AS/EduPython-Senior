@@ -1,5 +1,7 @@
 # EduPython-Senior Roadmap
 
+Status: M0 Foundation **PASS** · M1 First instructions **PASS** · M2 Variables **PASS** · M3 Input **PASS**. M4 Decisions is the active milestone.
+
 ## M0 — Foundation
 
 Goal: establish a maintainable bilingual course and publishing pipeline before substantial lesson content is added.
