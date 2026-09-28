@@ -45,9 +45,9 @@ linje → "20" + linjeskift
 
 og slik fortsetter det til filen er ferdig lest.
 
-\`\n\` representerer et linjeskift.
+escape-sekvensen for linjeskift representerer et linjeskift.
 
-Du ser vanligvis ikke tegnene \`\`\\n\`\` i tekstfilen. De beskriver at linjen slutter og en ny begynner.
+Du ser vanligvis ikke tegnene tegnene for escape-sekvensen for linjeskift i tekstfilen. De beskriver at linjen slutter og en ny begynner.
 
 ## Hvorfor kan print() gi ekstra luft?
 
