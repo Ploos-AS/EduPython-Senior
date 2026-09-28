@@ -25,3 +25,4 @@ content/no/m05/07-oppgaver.md
 content/no/m06/01-funksjoner.md
 content/no/m06/02-parametere.md
 content/no/m06/03-return.md
+content/no/m06/04-funksjoner-med-if-for.md
