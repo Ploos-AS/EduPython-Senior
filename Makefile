@@ -9,6 +9,7 @@ EN_INPUTS = $(shell $(PYTHON) tools/book_inputs.py en)
 
 check: examples
 	$(PYTHON) tools/check_content.py
+	$(PYTHON) tools/check_accessibility.py
 	$(PYTHON) tools/book_inputs.py no >/dev/null
 	$(PYTHON) tools/book_inputs.py en >/dev/null
 
