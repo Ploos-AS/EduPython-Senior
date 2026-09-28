@@ -1,21 +1,40 @@
-.PHONY: check examples web epub kindle pdf books
+PANDOC ?= pandoc
+PYTHON ?= python3
+DIST ?= dist
+
+NO_INPUTS = $(shell $(PYTHON) tools/book_inputs.py no)
+EN_INPUTS = $(shell $(PYTHON) tools/book_inputs.py en)
+
+.PHONY: check examples web epub kindle pdf books clean
 
 check: examples
-	python3 tools/check_content.py
+	$(PYTHON) tools/check_content.py
+	$(PYTHON) tools/book_inputs.py no >/dev/null
+	$(PYTHON) tools/book_inputs.py en >/dev/null
 
 examples:
-	python3 tools/check_examples.py
+	$(PYTHON) tools/check_examples.py
 
 web:
-	@echo "M0 web target: shared-source pipeline scaffold ready"
+	@echo "Web renderer is the next M0 publishing target"
 
-epub:
-	@echo "M0 EPUB target: shared-source pipeline scaffold ready"
+epub: $(DIST)/EduPython-Senior-NO.epub $(DIST)/EduPython-Senior-EN.epub
+
+$(DIST)/EduPython-Senior-NO.epub: $(NO_INPUTS) book/no.yaml book/epub.css
+	mkdir -p $(DIST)
+	$(PANDOC) --metadata-file=book/no.yaml --css=book/epub.css --toc -o $@ $(NO_INPUTS)
+
+$(DIST)/EduPython-Senior-EN.epub: $(EN_INPUTS) book/en.yaml book/epub.css
+	mkdir -p $(DIST)
+	$(PANDOC) --metadata-file=book/en.yaml --css=book/epub.css --toc -o $@ $(EN_INPUTS)
 
 kindle: epub
-	@echo "M0 Kindle profile: validate the EPUB-derived Kindle edition"
+	@echo "Kindle profile uses the generated EPUB files; Kindle-specific validation follows in M0."
 
 pdf:
-	@echo "M0 PDF target: print-quality pipeline scaffold ready"
+	@echo "Print-quality PDF renderer follows after EPUB qualification."
 
 books: epub kindle pdf
+
+clean:
+	rm -rf $(DIST)
