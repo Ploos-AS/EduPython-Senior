@@ -4,3 +4,4 @@ content/en/m01/02-build-a-small-program.md
 content/en/m01/03-exercises.md
 content/en/m02/01-variables.md
 content/en/m02/02-practical-program.md
+content/en/m02/03-exercises.md
