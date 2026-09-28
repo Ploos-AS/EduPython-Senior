@@ -29,3 +29,4 @@ content/no/m06/04-funksjoner-med-if-for.md
 content/no/m06/05-lite-program.md
 content/no/m06/06-teste-funksjon.md
 content/no/m06/07-oppgaver.md
+content/no/m07/01-lister.md
