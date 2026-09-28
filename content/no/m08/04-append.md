@@ -2,9 +2,9 @@
 
 I forrige leksjon brukte vi:
 
-\`\`\`python
+```python
 "w"
-\`\`\`
+```
 
 Da blir filen opprettet eller erstattet.
 
@@ -12,9 +12,9 @@ Noen ganger vil vi beholde det som allerede står i filen og legge til noe nytt.
 
 Da kan vi bruke:
 
-\`\`\`python
+```python
 "a"
-\`\`\`
+```
 
 \`"a"\` betyr **append** – legg til på slutten.
 
@@ -22,24 +22,24 @@ Da kan vi bruke:
 
 Først lager vi en øvingsfil:
 
-\`\`\`python
+```python
 with open("logg.txt", "w", encoding="utf-8") as fil:
     fil.write("Programmet startet\n")
-\`\`\`
+```
 
 Så åpner vi den med \`"a"\`:
 
-\`\`\`python
+```python
 with open("logg.txt", "a", encoding="utf-8") as fil:
     fil.write("Første oppgave er ferdig\n")
-\`\`\`
+```
 
 Filen inneholder nå:
 
-\`\`\`text
+```text
 Programmet startet
 Første oppgave er ferdig
-\`\`\`
+```
 
 Den første linjen ble beholdt.
 
@@ -47,23 +47,23 @@ Den første linjen ble beholdt.
 
 Vi kjenner nå tre filmoduser:
 
-\`\`\`text
+```text
 "r" → read   → les eksisterende innhold
 "w" → write  → skriv, og erstatt gammelt innhold
 "a" → append → legg til etter eksisterende innhold
-\`\`\`
+```
 
 Det er viktig å velge riktig modus før filen åpnes.
 
 ## Legg til flere ganger
 
-\`\`\`python
+```python
 with open("logg.txt", "a", encoding="utf-8") as fil:
     fil.write("Andre oppgave er ferdig\n")
 
 with open("logg.txt", "a", encoding="utf-8") as fil:
     fil.write("Programmet avsluttes\n")
-\`\`\`
+```
 
 Nå inneholder filen flere oppføringer.
 
@@ -73,23 +73,23 @@ Hver bruk av \`"a"\` legger ny tekst på slutten.
 
 Dette:
 
-\`\`\`python
+```python
 fil.write("Ny oppføring")
-\`\`\`
+```
 
 legger ikke automatisk til et linjeskift.
 
 Hvis neste oppføring også mangler escape-sekvensen for linjeskift, kan resultatet bli:
 
-\`\`\`text
+```text
 Ny oppføringNeste oppføring
-\`\`\`
+```
 
 For én oppføring per linje bruker vi:
 
-\`\`\`python
+```python
 fil.write("Ny oppføring\n")
-\`\`\`
+```
 
 ## Append oppretter også filen
 
@@ -97,10 +97,10 @@ Hvis filen ikke finnes, vil \`"a"\` normalt opprette den.
 
 Det betyr at:
 
-\`\`\`python
+```python
 with open("notater.txt", "a", encoding="utf-8") as fil:
     fil.write("Første notat\n")
-\`\`\`
+```
 
 kan brukes selv om \`notater.txt\` ikke eksisterte fra før.
 
@@ -113,29 +113,29 @@ Forskjellen fra \`"w"\` blir viktig når filen allerede finnes:
 
 En logg er en fil der nye hendelser legges til etter hvert.
 
-\`\`\`python
+```python
 def legg_til_logg(melding):
     with open("logg.txt", "a", encoding="utf-8") as fil:
         fil.write(melding + "\n")
-\`\`\`
+```
 
 Vi kan bruke funksjonen flere ganger:
 
-\`\`\`python
+```python
 legg_til_logg("Start")
 legg_til_logg("Kontroll utført")
 legg_til_logg("Ferdig")
-\`\`\`
+```
 
 Dette kombinerer M6-funksjoner med M8-filer.
 
 ## Les loggen tilbake
 
-\`\`\`python
+```python
 with open("logg.txt", "r", encoding="utf-8") as fil:
     for linje in fil:
         print(linje.strip())
-\`\`\`
+```
 
 Nå bruker vi tre tidligere ideer sammen:
 
@@ -162,10 +162,10 @@ Da kan det være bedre å bygge innholdet på nytt og skrive en ny fil med \`"w"
 
 Hvis du kjører dette programmet tre ganger:
 
-\`\`\`python
+```python
 with open("logg.txt", "a", encoding="utf-8") as fil:
     fil.write("Programmet kjørte\n")
-\`\`\`
+```
 
 får du tre nye linjer.
 
@@ -193,10 +193,10 @@ Kjør append-delen én gang til og se hva som skjer.
 
 Lag en funksjon:
 
-\`\`\`python
+```python
 def legg_til_notat(notat):
     # skriv notatet til filen
-\`\`\`
+```
 
 Funksjonen skal:
 
