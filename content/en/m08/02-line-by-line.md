@@ -10,20 +10,20 @@ We can use a \`for\` loop.
 
 Imagine that \`temperatures.txt\` contains:
 
-\`\`\`text
+```text
 18
 20
 17
 21
-\`\`\`
+```
 
 The program can read the lines like this:
 
-\`\`\`python
+```python
 with open("temperatures.txt", "r", encoding="utf-8") as file:
     for line in file:
         print(line)
-\`\`\`
+```
 
 This uses the same \`for\` idea that you already know.
 
@@ -33,15 +33,15 @@ Python gives us one line from the file at a time.
 
 First iteration:
 
-\`\`\`text
+```text
 line → "18" + newline
-\`\`\`
+```
 
 Second iteration:
 
-\`\`\`text
+```text
 line → "20" + newline
-\`\`\`
+```
 
 and this continues until the file has been read.
 
@@ -55,7 +55,7 @@ You normally do not see the characters the characters of the newline escape sequ
 
 If the text we print already ends with a newline, the result can look like:
 
-\`\`\`text
+```text
 18
 
 20
@@ -63,27 +63,27 @@ If the text we print already ends with a newline, the result can look like:
 17
 
 21
-\`\`\`
+```
 
 We can remove the newline before printing the text.
 
 ## strip()
 
-\`\`\`python
+```python
 with open("temperatures.txt", "r", encoding="utf-8") as file:
     for line in file:
         line = line.strip()
         print(line)
-\`\`\`
+```
 
 Now the result is:
 
-\`\`\`text
+```text
 18
 20
 17
 21
-\`\`\`
+```
 
 \`strip()\` creates a text value without whitespace and newlines at the beginning and end.
 
@@ -93,14 +93,14 @@ In this example, we mainly use it to remove the newline.
 
 It can help to think like this:
 
-\`\`\`text
+```text
 text file
    │
    ├── line 1 → "18"
    ├── line 2 → "20"
    ├── line 3 → "17"
    └── line 4 → "21"
-\`\`\`
+```
 
 The loop processes one text line at a time.
 
@@ -108,22 +108,22 @@ The loop processes one text line at a time.
 
 Even if the file contains:
 
-\`\`\`text
+```text
 18
 20
 17
-\`\`\`
+```
 
 each line is read as text.
 
 If we want to calculate with the value, we must convert it:
 
-\`\`\`python
+```python
 with open("temperatures.txt", "r", encoding="utf-8") as file:
     for line in file:
         temperature = int(line.strip())
         print(temperature + 1)
-\`\`\`
+```
 
 This builds on the conversion you learned earlier.
 
@@ -131,7 +131,7 @@ This builds on the conversion you learned earlier.
 
 We can combine a file, loop, and accumulator:
 
-\`\`\`python
+```python
 total = 0
 
 with open("temperatures.txt", "r", encoding="utf-8") as file:
@@ -140,22 +140,22 @@ with open("temperatures.txt", "r", encoding="utf-8") as file:
         total = total + value
 
 print("Total:", total)
-\`\`\`
+```
 
 For the file:
 
-\`\`\`text
+```text
 18
 20
 17
 21
-\`\`\`
+```
 
 the total is:
 
-\`\`\`text
+```text
 Total: 76
-\`\`\`
+```
 
 ## Why read line by line?
 
@@ -173,7 +173,7 @@ Later, this will be important when we work with data files.
 
 ## Count the lines
 
-\`\`\`python
+```python
 count = 0
 
 with open("temperatures.txt", "r", encoding="utf-8") as file:
@@ -181,7 +181,7 @@ with open("temperatures.txt", "r", encoding="utf-8") as file:
         count = count + 1
 
 print("Number of lines:", count)
-\`\`\`
+```
 
 Here, we do not even need the contents of the line. We only count how many times the loop runs.
 
