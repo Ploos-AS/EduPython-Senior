@@ -31,3 +31,4 @@ content/no/m06/06-teste-funksjon.md
 content/no/m06/07-oppgaver.md
 content/no/m07/01-lister.md
 content/no/m07/02-indekser.md
+content/no/m07/03-endre-lister.md
