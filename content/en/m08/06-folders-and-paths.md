@@ -6,9 +6,9 @@ To open the correct file, a program needs to know its **path**.
 
 So far, we have used simple paths such as:
 
-\`\`\`text
+```text
 sample.txt
-\`\`\`
+```
 
 Now we will also use folders.
 
@@ -16,12 +16,12 @@ Now we will also use folders.
 
 Imagine that the project looks like this:
 
-\`\`\`text
+```text
 my-program/
 ├── program.py
 └── data/
     └── places.txt
-\`\`\`
+```
 
 The Python file is named \`program.py\`.
 
@@ -29,9 +29,9 @@ The text file is inside the \`data\` subfolder.
 
 A relative path to the text file can be written as:
 
-\`\`\`text
+```text
 data/places.txt
-\`\`\`
+```
 
 ## What is a relative path?
 
@@ -39,9 +39,9 @@ A **relative path** describes a location relative to another location.
 
 This:
 
-\`\`\`text
+```text
 data/places.txt
-\`\`\`
+```
 
 roughly means:
 
@@ -57,9 +57,9 @@ When Python starts a program, the process has a **current working directory**.
 
 A simple call such as:
 
-\`\`\`python
+```python
 open("data/places.txt", "r", encoding="utf-8")
-\`\`\`
+```
 
 is interpreted relative to that working directory.
 
@@ -73,15 +73,15 @@ Python includes the \`pathlib\` standard library module.
 
 It provides \`Path\`.
 
-\`\`\`python
+```python
 from pathlib import Path
-\`\`\`
+```
 
 We can find the folder containing the Python file itself:
 
-\`\`\`python
+```python
 program_folder = Path(__file__).parent
-\`\`\`
+```
 
 You do not need to know every detail about \`__file__\` yet.
 
@@ -93,22 +93,22 @@ In this pattern, it simply means:
 
 We can combine folders and file names with \`/\`:
 
-\`\`\`python
+```python
 from pathlib import Path
 
 program_folder = Path(__file__).parent
 file_path = program_folder / "data" / "places.txt"
-\`\`\`
+```
 
 This builds the path layer by layer:
 
-\`\`\`text
+```text
 program folder
     │
     └── data
          │
          └── places.txt
-\`\`\`
+```
 
 Here, \`/\` does not mean division.
 
@@ -116,7 +116,7 @@ When we work with \`Path\`, it combines parts of a path.
 
 ## Read the file
 
-\`\`\`python
+```python
 from pathlib import Path
 
 program_folder = Path(__file__).parent
@@ -125,7 +125,7 @@ file_path = program_folder / "data" / "places.txt"
 with open(file_path, "r", encoding="utf-8") as file:
     for line in file:
         print(line.strip())
-\`\`\`
+```
 
 The program now finds the data file based on where \`program.py\` is located, rather than the working directory from which Python happened to be started.
 
@@ -133,9 +133,9 @@ The program now finds the data file based on where \`program.py\` is located, ra
 
 Imagine that the program is located at:
 
-\`\`\`text
+```text
 course/m08/program.py
-\`\`\`
+```
 
 You may start it from different locations.
 
@@ -147,17 +147,17 @@ This makes examples and small projects more predictable.
 
 The variable:
 
-\`\`\`python
+```python
 file_path = program_folder / "data" / "places.txt"
-\`\`\`
+```
 
 contains a \`Path\` object.
 
 \`open()\` can use it directly:
 
-\`\`\`python
+```python
 open(file_path, "r", encoding="utf-8")
-\`\`\`
+```
 
 We do not need to convert the path to text first.
 
@@ -165,23 +165,23 @@ We do not need to convert the path to text first.
 
 In:
 
-\`\`\`python
+```python
 Path(__file__).parent
-\`\`\`
+```
 
 \`.parent\` means the folder containing the file.
 
 If the Python file is:
 
-\`\`\`text
+```text
 /home/anna/course/program.py
-\`\`\`
+```
 
 the parent folder is:
 
-\`\`\`text
+```text
 /home/anna/course
-\`\`\`
+```
 
 The exact path will naturally be different on different computers.
 
@@ -191,9 +191,9 @@ That is exactly why we do not put one particular user's complete path into the p
 
 This may work on one particular computer:
 
-\`\`\`python
+```python
 open("/home/anna/course/data/places.txt", "r", encoding="utf-8")
-\`\`\`
+```
 
 but the program becomes tied to that location.
 
@@ -205,15 +205,15 @@ When the data file belongs with the program, it is often better to build the pat
 
 If we build:
 
-\`\`\`python
+```python
 file_path = program_folder / "data" / "places.txt"
-\`\`\`
+```
 
 but the \`data\` folder or file does not exist, reading can still produce:
 
-\`\`\`text
+```text
 FileNotFoundError
-\`\`\`
+```
 
 A valid Python path can still point to something that does not exist.
 
@@ -223,23 +223,23 @@ Use the debugging knowledge from M8.5.
 
 Create this structure:
 
-\`\`\`text
+```text
 practice/
 ├── program.py
 └── data/
     └── names.txt
-\`\`\`
+```
 
 Put a few names in \`names.txt\`.
 
 Use:
 
-\`\`\`python
+```python
 from pathlib import Path
 
 program_folder = Path(__file__).parent
 file_path = program_folder / "data" / "names.txt"
-\`\`\`
+```
 
 Read the file line by line.
 
@@ -247,9 +247,9 @@ Read the file line by line.
 
 Create a new subfolder beside the program, for example:
 
-\`\`\`text
+```text
 notes/
-\`\`\`
+```
 
 Put a text file in that folder.
 
