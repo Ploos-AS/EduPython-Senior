@@ -1,1 +1,2 @@
 content/en/m00/01-welcome.md
+content/en/m01/01-instructions.md
