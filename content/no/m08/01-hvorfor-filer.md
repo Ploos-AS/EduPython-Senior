@@ -8,13 +8,13 @@ Men hva skjer når programmet avsluttes?
 
 Se på:
 
-\`\`\`python
+```python
 navn = "Anna"
 målinger = [12, 15, 11]
 
 print(navn)
 print(målinger)
-\`\`\`
+```
 
 Mens programmet kjører, finnes verdiene i variablene.
 
@@ -44,9 +44,9 @@ Vi endrer eller sletter ingen filer.
 
 Eksempelet bruker filen:
 
-\`\`\`text
+```text
 sample.txt
-\`\`\`
+```
 
 Den inneholder vanlig tekst.
 
@@ -54,12 +54,12 @@ Tenk på den som en liten notatfil programmet skal lese.
 
 ## Prøv det
 
-\`\`\`python
+```python
 with open("sample.txt", "r", encoding="utf-8") as fil:
     innhold = fil.read()
 
 print(innhold)
-\`\`\`
+```
 
 Når eksempelet kjøres fra mappen der filen ligger, åpner Python \`sample.txt\`, leser teksten og legger den i variabelen \`innhold\`.
 
@@ -69,9 +69,9 @@ Deretter skriver programmet ut teksten.
 
 Først:
 
-\`\`\`python
+```python
 open("sample.txt", "r", encoding="utf-8")
-\`\`\`
+```
 
 Dette ber Python åpne filen.
 
@@ -87,9 +87,9 @@ UTF-8 kan representere blant annet norske bokstaver som æ, ø og å.
 
 Hele starten er:
 
-\`\`\`python
+```python
 with open("sample.txt", "r", encoding="utf-8") as fil:
-\`\`\`
+```
 
 Mens den innrykkede delen kjører, kan vi bruke filen gjennom navnet \`fil\`.
 
@@ -103,9 +103,9 @@ Du trenger ikke lære en separat \`close()\`-regel først.
 
 Denne linjen:
 
-\`\`\`python
+```python
 innhold = fil.read()
-\`\`\`
+```
 
 leser hele tekstinnholdet fra filen.
 
@@ -117,12 +117,12 @@ Det betyr at \`innhold\` kan brukes som andre tekstverdier du allerede kjenner.
 
 Legg merke til:
 
-\`\`\`python
+```python
 with open("sample.txt", "r", encoding="utf-8") as fil:
     innhold = fil.read()
 
 print(innhold)
-\`\`\`
+```
 
 \`fil.read()\` står inni \`with\`-blokken.
 
@@ -132,9 +132,9 @@ Selve filen er da lukket, men teksten vi leste ligger fortsatt i variabelen \`in
 
 ## Hva betyr filnavnet?
 
-\`\`\`text
+```text
 sample.txt
-\`\`\`
+```
 
 er en **sti** til filen.
 
@@ -148,9 +148,9 @@ Vi skal lære mer om mapper og stier senere i M8.
 
 Hvis Python ikke finner filen, får du vanligvis:
 
-\`\`\`text
+```text
 FileNotFoundError
-\`\`\`
+```
 
 Det betyr ikke at Python er ødelagt.
 
@@ -185,9 +185,9 @@ Lag deretter en kopi av leseprogrammet og endre filnavnet slik at det leser din 
 
 Bruk fortsatt:
 
-\`\`\`python
+```python
 "r"
-\`\`\`
+```
 
 slik at programmet bare åpner filen for lesing.
 
