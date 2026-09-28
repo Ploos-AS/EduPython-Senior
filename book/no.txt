@@ -20,3 +20,4 @@ content/no/m05/02-range.md
 content/no/m05/03-for-og-if.md
 content/no/m05/04-bygge-resultat.md
 content/no/m05/05-while.md
+content/no/m05/06-praktisk-program.md
