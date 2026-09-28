@@ -6,3 +6,4 @@ content/en/m02/01-variables.md
 content/en/m02/02-practical-program.md
 content/en/m02/03-exercises.md
 content/en/m03/01-input.md
+content/en/m03/02-numbers-from-input.md
