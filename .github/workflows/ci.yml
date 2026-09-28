@@ -36,6 +36,10 @@ jobs:
           mkdir -p dist
           INPUTS="$(python3 tools/book_inputs.py no | tr ' ' '\n' | grep -v '/m08/' | tr '\n' ' ')"
           pandoc --metadata-file=book/no.yaml --toc --pdf-engine=xelatex -V papersize:a4 -V geometry:margin=25mm -V fontsize=12pt -V linestretch=1.15 -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" -o dist/no-baseline.pdf $INPUTS
+      - name: Diagnose Norwegian PDF through M8.2
+        run: |
+          INPUTS="$(python3 tools/book_inputs.py no | tr ' ' '\n' | sed '/\/m08\/03-/,$d' | tr '\n' ' ')"
+          pandoc --metadata-file=book/no.yaml --toc --pdf-engine=xelatex -V papersize:a4 -V geometry:margin=25mm -V fontsize=12pt -V linestretch=1.15 -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" -o dist/no-through-m8-2.pdf $INPUTS
       - name: Diagnose Norwegian PDF through M8.4
         run: |
           INPUTS="$(python3 tools/book_inputs.py no | tr ' ' '\n' | sed '/\/m08\/05-/,$d' | tr '\n' ' ')"
