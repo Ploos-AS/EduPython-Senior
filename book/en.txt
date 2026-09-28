@@ -41,3 +41,4 @@ content/en/m08/01-why-files.md
 content/en/m08/02-line-by-line.md
 content/en/m08/03-write-files.md
 content/en/m08/04-append.md
+content/en/m08/05-file-errors.md
