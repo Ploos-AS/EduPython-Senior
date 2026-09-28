@@ -8,13 +8,13 @@ But what happens when the program ends?
 
 Look at:
 
-\`\`\`python
+```python
 name = "Anna"
 measurements = [12, 15, 11]
 
 print(name)
 print(measurements)
-\`\`\`
+```
 
 While the program runs, the values exist in the variables.
 
@@ -44,9 +44,9 @@ We will not change or delete any files.
 
 The example uses the file:
 
-\`\`\`text
+```text
 sample.txt
-\`\`\`
+```
 
 It contains ordinary text.
 
@@ -54,12 +54,12 @@ Think of it as a small note file for the program to read.
 
 ## Try it
 
-\`\`\`python
+```python
 with open("sample.txt", "r", encoding="utf-8") as file:
     content = file.read()
 
 print(content)
-\`\`\`
+```
 
 When the example is run from the folder containing the file, Python opens \`sample.txt\`, reads the text, and stores it in the variable \`content\`.
 
@@ -69,9 +69,9 @@ The program then prints the text.
 
 First:
 
-\`\`\`python
+```python
 open("sample.txt", "r", encoding="utf-8")
-\`\`\`
+```
 
 This asks Python to open the file.
 
@@ -87,9 +87,9 @@ UTF-8 can represent characters from many languages, including Norwegian letters 
 
 The complete beginning is:
 
-\`\`\`python
+```python
 with open("sample.txt", "r", encoding="utf-8") as file:
-\`\`\`
+```
 
 While the indented part runs, we can use the file through the name \`file\`.
 
@@ -103,9 +103,9 @@ You do not need to learn a separate \`close()\` rule first.
 
 This line:
 
-\`\`\`python
+```python
 content = file.read()
-\`\`\`
+```
 
 reads all the text content from the file.
 
@@ -117,12 +117,12 @@ So \`content\` can be used like other text values you already know.
 
 Notice:
 
-\`\`\`python
+```python
 with open("sample.txt", "r", encoding="utf-8") as file:
     content = file.read()
 
 print(content)
-\`\`\`
+```
 
 \`file.read()\` is inside the \`with\` block.
 
@@ -132,9 +132,9 @@ The file itself is closed by then, but the text we read is still stored in \`con
 
 ## What does the file name mean?
 
-\`\`\`text
+```text
 sample.txt
-\`\`\`
+```
 
 is a **path** to the file.
 
@@ -148,9 +148,9 @@ We will learn more about folders and paths later in M8.
 
 If Python cannot find the file, you will usually get:
 
-\`\`\`text
+```text
 FileNotFoundError
-\`\`\`
+```
 
 This does not mean Python is broken.
 
@@ -185,9 +185,9 @@ Then make a copy of the reading program and change the file name so that it read
 
 Continue to use:
 
-\`\`\`python
+```python
 "r"
-\`\`\`
+```
 
 so the program only opens the file for reading.
 
