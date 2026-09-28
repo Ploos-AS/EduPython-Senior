@@ -18,17 +18,23 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install publishing tools
-        run: sudo apt-get update && sudo apt-get install -y pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended
       - name: Validate course and examples
         run: make check
       - name: Build EPUB editions
         run: make epub
-      - name: Verify EPUB artifacts
+      - name: Build PDF editions
+        run: make pdf
+      - name: Verify EPUB and PDF artifacts
         run: |
           test -s dist/EduPython-Senior-NO.epub
           test -s dist/EduPython-Senior-EN.epub
+          test -s dist/EduPython-Senior-NO.pdf
+          test -s dist/EduPython-Senior-EN.pdf
       - uses: actions/upload-artifact@v4
         with:
-          name: edupython-senior-epub
-          path: dist/*.epub
+          name: edupython-senior-books
+          path: |
+            dist/*.epub
+            dist/*.pdf
           if-no-files-found: error
