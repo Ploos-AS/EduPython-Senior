@@ -43,3 +43,4 @@ content/en/m08/03-write-files.md
 content/en/m08/04-append.md
 content/en/m08/05-file-errors.md
 content/en/m08/06-folders-and-paths.md
+content/en/m08/07-files-lists-functions.md
