@@ -34,3 +34,4 @@ content/no/m07/02-indekser.md
 content/no/m07/03-endre-lister.md
 content/no/m07/04-lengde.md
 content/no/m07/05-ordboker.md
+content/no/m07/06-endre-ordboker.md
