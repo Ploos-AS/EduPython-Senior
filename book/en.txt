@@ -17,3 +17,4 @@ content/en/m04/05-practical-program.md
 content/en/m04/06-exercises.md
 content/en/m05/01-for.md
 content/en/m05/02-range.md
+content/en/m05/03-for-and-if.md
