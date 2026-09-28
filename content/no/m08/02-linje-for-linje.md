@@ -34,13 +34,13 @@ Python gir oss én linje fra filen om gangen.
 Første runde:
 
 \`\`\`text
-linje → "18\n"
+linje → "18" + linjeskift
 \`\`\`
 
 Andre runde:
 
 \`\`\`text
-linje → "20\n"
+linje → "20" + linjeskift
 \`\`\`
 
 og slik fortsetter det til filen er ferdig lest.
