@@ -2,14 +2,31 @@
 
 EduPython-Senior skiller mellom programvare og kursinnhold.
 
-## Programvare
+## Programvare — MIT
 
 Byggeskript, hjelpeverktøy og kjørbare kodeeksempler i dette repoet er lisensiert under MIT-lisensen, se `LICENSE`.
 
-## Kursinnhold og dokumentasjon
+Dette omfatter normalt:
 
-Kursinnhold og dokumentasjon skal publiseres under en Creative Commons-lisens i tråd med Ploos-AS sin dokumentasjonspolicy.
+- `tools/`
+- `examples/`
+- byggelogikk og annen programkode
 
-Den konkrete Creative Commons-varianten må fastsettes eksplisitt før M0 kan lukkes. Inntil det er gjort, skal repoet ikke feilaktig hevde at kursinnholdet allerede er lisensiert under en bestemt CC-variant.
+## Kursinnhold og dokumentasjon — CC BY 4.0
 
-Dette skillet er bevisst: software-lisensen gjelder ikke automatisk tekst, illustrasjoner eller annet kursmateriale.
+Kursinnhold, undervisningstekst og dokumentasjon er lisensiert under Creative Commons Attribution 4.0 International (CC BY 4.0).
+
+Dette omfatter normalt:
+
+- `content/`
+- `docs/`
+- bok- og webtekst
+- originale kursillustrasjoner med mindre annet er angitt
+
+Ved gjenbruk skal Ploos AS / EduPython-Senior krediteres på en rimelig måte.
+
+Tredjepartsinnhold beholder eventuell egen lisens og skal merkes eksplisitt.
+
+## Prinsipp
+
+MIT-lisensen gjelder ikke automatisk kurs-/dokumentasjonsteksten, og CC BY 4.0 gjelder ikke automatisk programkoden. Filspesifikk lisensmerking overstyrer den generelle katalogregelen når dette er nødvendig.
