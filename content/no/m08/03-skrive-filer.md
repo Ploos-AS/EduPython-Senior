@@ -70,7 +70,7 @@ fil.write("Dette er skrevet av Python.\n")
 
 skriver tekst til filen.
 
-Legg merke til \`\n\`.
+Legg merke til escape-sekvensen for linjeskift.
 
 \`write()\` legger ikke automatisk til et linjeskift slik \`print()\` vanligvis gjør.
 
@@ -221,7 +221,7 @@ Du kan nå:
 - åpne en fil med \`"w"\`
 - forklare at \`"w"\` oppretter eller erstatter en fil
 - skrive tekst med \`write()\`
-- legge til linjeskift med \`\n\`
+- legge til linjeskift med escape-sekvensen for linjeskift
 - konvertere tall til tekst før skriving
 - skrive elementer fra en liste
 - lese en skrevet fil tilbake for kontroll
