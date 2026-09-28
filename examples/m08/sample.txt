@@ -1,0 +1,3 @@
+First line
+Second line with æ, ø and å
+Third line
