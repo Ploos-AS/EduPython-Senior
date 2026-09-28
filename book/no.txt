@@ -1,1 +1,2 @@
 content/no/m00/01-velkommen.md
+content/no/m01/01-instruksjoner.md
