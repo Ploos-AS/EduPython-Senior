@@ -1,0 +1,6 @@
+print("EduPython-Senior")
+print("Python follows instructions from top to bottom.")
+print(2 + 3)
+print(10 - 4)
+print(6 * 7)
+print(20 / 4)
