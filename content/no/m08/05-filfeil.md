@@ -10,23 +10,23 @@ Målet er ikke å unngå alle feil. Målet er å kunne lese dem og finne årsake
 
 Dette programmet prøver å lese en fil:
 
-\`\`\`python
+```python
 with open("målinger.txt", "r", encoding="utf-8") as fil:
     innhold = fil.read()
-\`\`\`
+```
 
 Hvis Python ikke finner filen, kan feilmeldingen inneholde:
 
-\`\`\`text
+```text
 FileNotFoundError
-\`\`\`
+```
 
 Navnet sier mye:
 
-\`\`\`text
+```text
 File     Not Found     Error
 fil      ikke funnet   feil
-\`\`\`
+```
 
 Programmet ba om en fil som Python ikke fant på den oppgitte stien.
 
@@ -42,15 +42,15 @@ Når du ser \`FileNotFoundError\`, kontroller:
 
 En liten skrivefeil er nok:
 
-\`\`\`python
+```python
 open("temperatur.txt", "r", encoding="utf-8")
-\`\`\`
+```
 
 hvis filen egentlig heter:
 
-\`\`\`text
+```text
 temperaturer.txt
-\`\`\`
+```
 
 ## Stien er en del av feilen
 
@@ -60,9 +60,9 @@ Filnavnet eller stien forteller hvor programmet forventer å finne den.
 
 Et enkelt navn:
 
-\`\`\`text
+```text
 temperaturer.txt
-\`\`\`
+```
 
 er en relativ sti.
 
@@ -90,7 +90,7 @@ Noen programmer må kunne håndtere at en fil mangler.
 
 Da kan vi bruke \`try\` og \`except\`.
 
-\`\`\`python
+```python
 try:
     with open("notater.txt", "r", encoding="utf-8") as fil:
         innhold = fil.read()
@@ -98,23 +98,23 @@ try:
     print(innhold)
 except FileNotFoundError:
     print("Fant ikke notater.txt")
-\`\`\`
+```
 
 Python prøver først koden under \`try\`.
 
 Hvis akkurat en \`FileNotFoundError\` oppstår, kjører koden under:
 
-\`\`\`python
+```python
 except FileNotFoundError:
-\`\`\`
+```
 
 ## Hvorfor skriver vi feiltypen?
 
 Vi bruker:
 
-\`\`\`python
+```python
 except FileNotFoundError:
-\`\`\`
+```
 
 ikke bare en generell regel som skjuler alle feil.
 
@@ -138,14 +138,14 @@ Hvis nei, undersøk hvorfor den mangler.
 
 Vi kan kombinere dette med funksjoner:
 
-\`\`\`python
+```python
 def les_notater():
     try:
         with open("notater.txt", "r", encoding="utf-8") as fil:
             return fil.read()
     except FileNotFoundError:
         return "Ingen notatfil funnet."
-\`\`\`
+```
 
 Funksjonen returnerer enten filinnholdet eller en tydelig melding.
 
@@ -183,9 +183,9 @@ Hvis filen mangler, skal den returnere en kort og forståelig melding.
 
 Bruk bare:
 
-\`\`\`python
+```python
 except FileNotFoundError:
-\`\`\`
+```
 
 ikke en generell \`except\`.
 
