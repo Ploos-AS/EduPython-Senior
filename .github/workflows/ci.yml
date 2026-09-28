@@ -18,13 +18,17 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install publishing tools
-        run: sudo apt-get update && sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended
+        run: sudo apt-get update && sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended epubcheck
       - name: Validate course and examples
         run: make check
       - name: Build web editions
         run: make web
       - name: Build EPUB editions
         run: make epub
+      - name: Validate EPUB standard compliance
+        run: |
+          epubcheck dist/EduPython-Senior-NO.epub
+          epubcheck dist/EduPython-Senior-EN.epub
       - name: Validate Kindle profile
         run: make kindle
       - name: Build PDF editions
