@@ -8,6 +8,7 @@ if not files:
 
 stdin_by_example = {
     "examples/m03/text_input.py": "Ada\nGrimstad\n",
+    "examples/m03/numeric_input.py": "3\n19.95\n",
 }
 
 for path in files:
