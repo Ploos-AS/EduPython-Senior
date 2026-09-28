@@ -43,3 +43,4 @@ content/no/m08/03-skrive-filer.md
 content/no/m08/04-append.md
 content/no/m08/05-filfeil.md
 content/no/m08/06-mapper-og-stier.md
+content/no/m08/07-filer-lister-funksjoner.md
