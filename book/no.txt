@@ -42,3 +42,4 @@ content/no/m08/02-linje-for-linje.md
 content/no/m08/03-skrive-filer.md
 content/no/m08/04-append.md
 content/no/m08/05-filfeil.md
+content/no/m08/06-mapper-og-stier.md
