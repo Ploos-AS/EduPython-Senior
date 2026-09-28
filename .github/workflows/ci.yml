@@ -31,6 +31,11 @@ jobs:
           epubcheck dist/EduPython-Senior-EN.epub
       - name: Validate Kindle profile
         run: make kindle
+      - name: Diagnose Norwegian PDF baseline
+        run: |
+          mkdir -p dist
+          INPUTS="$(python3 tools/book_inputs.py no | tr ' ' '\n' | grep -v '/m08/' | tr '\n' ' ')"
+          pandoc --metadata-file=book/no.yaml --toc --pdf-engine=xelatex -V papersize:a4 -V geometry:margin=25mm -V fontsize=12pt -V linestretch=1.15 -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" -o dist/no-baseline.pdf $INPUTS
       - name: Build Norwegian PDF
         run: make dist/EduPython-Senior-NO.pdf
       - name: Build English PDF
