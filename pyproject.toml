@@ -1,0 +1,9 @@
+[project]
+name = "edupython-senior-tools"
+version = "0.0.1"
+requires-python = ">=3.11"
+
+[tool.edupython]
+primary_language = "no"
+languages = ["no", "en"]
+outputs = ["web", "epub", "kindle", "pdf"]
