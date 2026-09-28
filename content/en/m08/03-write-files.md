@@ -8,9 +8,9 @@ Now the program will create a file.
 
 When we open a file with:
 
-\`\`\`python
+```python
 "w"
-\`\`\`
+```
 
 it means **write**.
 
@@ -24,10 +24,10 @@ Do not use the name of an important document when experimenting with \`"w"\`.
 
 ## Try it
 
-\`\`\`python
+```python
 with open("result.txt", "w", encoding="utf-8") as file:
     file.write("This was written by Python.\n")
-\`\`\`
+```
 
 When the program finishes, \`result.txt\` exists.
 
@@ -35,38 +35,38 @@ Open it in a text editor.
 
 You should see:
 
-\`\`\`text
+```text
 This was written by Python.
-\`\`\`
+```
 
 ## The same pattern as reading
 
 For reading, we used:
 
-\`\`\`python
+```python
 with open("sample.txt", "r", encoding="utf-8") as file:
-\`\`\`
+```
 
 For writing, we use:
 
-\`\`\`python
+```python
 with open("result.txt", "w", encoding="utf-8") as file:
-\`\`\`
+```
 
 The difference is the mode:
 
-\`\`\`text
+```text
 "r" → read
 "w" → write
-\`\`\`
+```
 
 ## write()
 
 This line:
 
-\`\`\`python
+```python
 file.write("This was written by Python.\n")
-\`\`\`
+```
 
 writes text to the file.
 
@@ -78,32 +78,32 @@ If we want a new line, we therefore write the newline ourselves.
 
 ## Write several lines
 
-\`\`\`python
+```python
 with open("result.txt", "w", encoding="utf-8") as file:
     file.write("Monday\n")
     file.write("Tuesday\n")
     file.write("Wednesday\n")
-\`\`\`
+```
 
 The file becomes:
 
-\`\`\`text
+```text
 Monday
 Tuesday
 Wednesday
-\`\`\`
+```
 
 ## Write values from a list
 
 We can combine file writing with what we learned in M7:
 
-\`\`\`python
+```python
 places = ["Tonstad", "Grimstad", "Oslo"]
 
 with open("places.txt", "w", encoding="utf-8") as file:
     for place in places:
         file.write(place + "\n")
-\`\`\`
+```
 
 Each item is now written on its own line.
 
@@ -113,17 +113,17 @@ Each item is now written on its own line.
 
 This does not work:
 
-\`\`\`python
+```python
 count = 3
 file.write(count)
-\`\`\`
+```
 
 We must convert the number:
 
-\`\`\`python
+```python
 count = 3
 file.write(str(count))
-\`\`\`
+```
 
 This is the same idea as before: Python distinguishes numbers from text.
 
@@ -135,7 +135,7 @@ A useful way to check a small program is:
 2. open it for reading
 3. inspect what was actually stored
 
-\`\`\`python
+```python
 with open("result.txt", "w", encoding="utf-8") as file:
     file.write("Line one\n")
     file.write("Line two\n")
@@ -144,7 +144,7 @@ with open("result.txt", "r", encoding="utf-8") as file:
     content = file.read()
 
 print(content)
-\`\`\`
+```
 
 The first \`with\` block writes.
 
@@ -154,22 +154,22 @@ The second reads.
 
 Imagine that \`result.txt\` contains:
 
-\`\`\`text
+```text
 Old text
-\`\`\`
+```
 
 Then we run:
 
-\`\`\`python
+```python
 with open("result.txt", "w", encoding="utf-8") as file:
     file.write("New text\n")
-\`\`\`
+```
 
 Afterwards, the file contains:
 
-\`\`\`text
+```text
 New text
-\`\`\`
+```
 
 The old text is gone.
 
@@ -189,9 +189,9 @@ Later, we will learn how to add content without replacing what is already there.
 
 Create a list:
 
-\`\`\`python
+```python
 tasks = ["Shopping", "Call the bank", "Read"]
-\`\`\`
+```
 
 Write each item to \`tasks.txt\`, one item per line.
 
