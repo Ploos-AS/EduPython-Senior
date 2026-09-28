@@ -19,3 +19,4 @@ content/en/m05/01-for.md
 content/en/m05/02-range.md
 content/en/m05/03-for-and-if.md
 content/en/m05/04-build-result.md
+content/en/m05/05-while.md
