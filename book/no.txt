@@ -15,3 +15,4 @@ content/no/m04/03-elif.md
 content/no/m04/04-logiske-operatorer.md
 content/no/m04/05-praktisk-program.md
 content/no/m04/06-oppgaver.md
+content/no/m05/01-for.md
