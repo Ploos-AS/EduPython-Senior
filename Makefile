@@ -15,8 +15,17 @@ check: examples
 examples:
 	$(PYTHON) tools/check_examples.py
 
-web:
-	@echo "Web renderer is the next M0 publishing target"
+web: $(DIST)/web/no/index.html $(DIST)/web/en/index.html
+
+$(DIST)/web/no/index.html: $(NO_INPUTS) book/no.yaml web/template.html web/style.css
+	mkdir -p $(DIST)/web/no $(DIST)/web/en
+	cp web/style.css $(DIST)/web/style.css
+	$(PANDOC) --metadata-file=book/no.yaml --template=web/template.html --standalone -o $@ $(NO_INPUTS)
+
+$(DIST)/web/en/index.html: $(EN_INPUTS) book/en.yaml web/template.html web/style.css
+	mkdir -p $(DIST)/web/no $(DIST)/web/en
+	cp web/style.css $(DIST)/web/style.css
+	$(PANDOC) --metadata-file=book/en.yaml --template=web/template.html --standalone -o $@ $(EN_INPUTS)
 
 epub: $(DIST)/EduPython-Senior-NO.epub $(DIST)/EduPython-Senior-EN.epub
 
