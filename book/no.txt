@@ -17,3 +17,4 @@ content/no/m04/05-praktisk-program.md
 content/no/m04/06-oppgaver.md
 content/no/m05/01-for.md
 content/no/m05/02-range.md
+content/no/m05/03-for-og-if.md
