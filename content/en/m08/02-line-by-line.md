@@ -34,13 +34,13 @@ Python gives us one line from the file at a time.
 First iteration:
 
 \`\`\`text
-line → "18\n"
+line → "18" + newline
 \`\`\`
 
 Second iteration:
 
 \`\`\`text
-line → "20\n"
+line → "20" + newline
 \`\`\`
 
 and this continues until the file has been read.
