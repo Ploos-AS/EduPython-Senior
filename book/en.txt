@@ -14,3 +14,4 @@ content/en/m04/02-else.md
 content/en/m04/03-elif.md
 content/en/m04/04-logical-operators.md
 content/en/m04/05-practical-program.md
+content/en/m04/06-exercises.md
