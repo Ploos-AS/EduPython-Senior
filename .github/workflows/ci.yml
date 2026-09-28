@@ -31,27 +31,15 @@ jobs:
           epubcheck dist/EduPython-Senior-EN.epub
       - name: Validate Kindle profile
         run: make kindle
-      - name: Diagnose Norwegian PDF baseline
-        run: |
-          mkdir -p dist
-          INPUTS="$(python3 tools/book_inputs.py no | tr ' ' '\n' | grep -v '/m08/' | tr '\n' ' ')"
-          pandoc --metadata-file=book/no.yaml --toc --pdf-engine=xelatex -V papersize:a4 -V geometry:margin=25mm -V fontsize=12pt -V linestretch=1.15 -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" -o dist/no-baseline.pdf $INPUTS
-      - name: Diagnose Norwegian PDF through M8.1
-        run: |
-          INPUTS="$(python3 tools/book_inputs.py no | tr ' ' '\n' | sed '/\/m08\/02-/,$d' | tr '\n' ' ')"
-          pandoc --metadata-file=book/no.yaml --toc --pdf-engine=xelatex -V papersize:a4 -V geometry:margin=25mm -V fontsize=12pt -V linestretch=1.15 -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" -o dist/no-through-m8-1.pdf $INPUTS
-      - name: Diagnose Norwegian PDF through M8.2
-        run: |
-          INPUTS="$(python3 tools/book_inputs.py no | tr ' ' '\n' | sed '/\/m08\/03-/,$d' | tr '\n' ' ')"
-          pandoc --metadata-file=book/no.yaml --toc --pdf-engine=xelatex -V papersize:a4 -V geometry:margin=25mm -V fontsize=12pt -V linestretch=1.15 -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" -o dist/no-through-m8-2.pdf $INPUTS
-      - name: Diagnose Norwegian PDF through M8.4
-        run: |
-          INPUTS="$(python3 tools/book_inputs.py no | tr ' ' '\n' | sed '/\/m08\/05-/,$d' | tr '\n' ' ')"
-          pandoc --metadata-file=book/no.yaml --toc --pdf-engine=xelatex -V papersize:a4 -V geometry:margin=25mm -V fontsize=12pt -V linestretch=1.15 -V mainfont="DejaVu Serif" -V monofont="DejaVu Sans Mono" -o dist/no-through-m8-4.pdf $INPUTS
       - name: Build Norwegian PDF
+        id: norwegian_pdf
+        continue-on-error: true
         run: make dist/EduPython-Senior-NO.pdf
       - name: Build English PDF
         run: make dist/EduPython-Senior-EN.pdf
+      - name: Require Norwegian PDF
+        if: steps.norwegian_pdf.outcome != 'success'
+        run: exit 1
       - name: Verify EPUB and PDF artifacts
         run: |
           test -s dist/web/no/index.html
