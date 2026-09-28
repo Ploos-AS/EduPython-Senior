@@ -21,12 +21,17 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended
       - name: Validate course and examples
         run: make check
+      - name: Build web editions
+        run: make web
       - name: Build EPUB editions
         run: make epub
       - name: Build PDF editions
         run: make pdf
       - name: Verify EPUB and PDF artifacts
         run: |
+          test -s dist/web/no/index.html
+          test -s dist/web/en/index.html
+          test -s dist/web/style.css
           test -s dist/EduPython-Senior-NO.epub
           test -s dist/EduPython-Senior-EN.epub
           test -s dist/EduPython-Senior-NO.pdf
@@ -37,4 +42,5 @@ jobs:
           path: |
             dist/*.epub
             dist/*.pdf
+            dist/web/
           if-no-files-found: error
