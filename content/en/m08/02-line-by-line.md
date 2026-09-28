@@ -45,9 +45,9 @@ line → "20" + newline
 
 and this continues until the file has been read.
 
-\`\n\` represents a newline.
+the newline escape sequence represents a newline.
 
-You normally do not see the characters \`\`\\n\`\` in the text file. They describe the end of one line and the start of another.
+You normally do not see the characters the characters of the newline escape sequence in the text file. They describe the end of one line and the start of another.
 
 ## Why can print() add extra space?
 
