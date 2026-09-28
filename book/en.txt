@@ -30,3 +30,4 @@ content/en/m06/05-small-program.md
 content/en/m06/06-test-function.md
 content/en/m06/07-exercises.md
 content/en/m07/01-lists.md
+content/en/m07/02-indexes.md
