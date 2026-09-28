@@ -2,9 +2,9 @@
 
 In the previous lesson, we used:
 
-\`\`\`python
+```python
 "w"
-\`\`\`
+```
 
 That creates or replaces a file.
 
@@ -12,9 +12,9 @@ Sometimes we want to keep what is already in the file and add something new.
 
 Then we can use:
 
-\`\`\`python
+```python
 "a"
-\`\`\`
+```
 
 \`"a"\` means **append** – add at the end.
 
@@ -22,24 +22,24 @@ Then we can use:
 
 First, create a practice file:
 
-\`\`\`python
+```python
 with open("log.txt", "w", encoding="utf-8") as file:
     file.write("Program started\n")
-\`\`\`
+```
 
 Then open it with \`"a"\`:
 
-\`\`\`python
+```python
 with open("log.txt", "a", encoding="utf-8") as file:
     file.write("First task completed\n")
-\`\`\`
+```
 
 The file now contains:
 
-\`\`\`text
+```text
 Program started
 First task completed
-\`\`\`
+```
 
 The first line was preserved.
 
@@ -47,23 +47,23 @@ The first line was preserved.
 
 We now know three file modes:
 
-\`\`\`text
+```text
 "r" → read   → read existing content
 "w" → write  → write and replace old content
 "a" → append → add after existing content
-\`\`\`
+```
 
 It is important to choose the correct mode before opening the file.
 
 ## Append several times
 
-\`\`\`python
+```python
 with open("log.txt", "a", encoding="utf-8") as file:
     file.write("Second task completed\n")
 
 with open("log.txt", "a", encoding="utf-8") as file:
     file.write("Program ending\n")
-\`\`\`
+```
 
 The file now contains several entries.
 
@@ -73,23 +73,23 @@ Each use of \`"a"\` adds new text at the end.
 
 This:
 
-\`\`\`python
+```python
 file.write("New entry")
-\`\`\`
+```
 
 does not automatically add a newline.
 
 If the next entry also lacks the newline escape sequence, the result can be:
 
-\`\`\`text
+```text
 New entryNext entry
-\`\`\`
+```
 
 For one entry per line, use:
 
-\`\`\`python
+```python
 file.write("New entry\n")
-\`\`\`
+```
 
 ## Append also creates the file
 
@@ -97,10 +97,10 @@ If the file does not exist, \`"a"\` will normally create it.
 
 That means:
 
-\`\`\`python
+```python
 with open("notes.txt", "a", encoding="utf-8") as file:
     file.write("First note\n")
-\`\`\`
+```
 
 can be used even if \`notes.txt\` did not already exist.
 
@@ -113,29 +113,29 @@ The difference from \`"w"\` matters when the file already exists:
 
 A log is a file where new events are added over time.
 
-\`\`\`python
+```python
 def add_log(message):
     with open("log.txt", "a", encoding="utf-8") as file:
         file.write(message + "\n")
-\`\`\`
+```
 
 We can call the function several times:
 
-\`\`\`python
+```python
 add_log("Start")
 add_log("Check completed")
 add_log("Finished")
-\`\`\`
+```
 
 This combines M6 functions with M8 files.
 
 ## Read the log back
 
-\`\`\`python
+```python
 with open("log.txt", "r", encoding="utf-8") as file:
     for line in file:
         print(line.strip())
-\`\`\`
+```
 
 We are now combining three earlier ideas:
 
@@ -162,10 +162,10 @@ In that case, rebuilding the contents and writing a new file with \`"w"\` may be
 
 If you run this program three times:
 
-\`\`\`python
+```python
 with open("log.txt", "a", encoding="utf-8") as file:
     file.write("Program ran\n")
-\`\`\`
+```
 
 you get three new lines.
 
@@ -193,10 +193,10 @@ Run the append part once more and see what happens.
 
 Create a function:
 
-\`\`\`python
+```python
 def add_note(note):
     # write the note to the file
-\`\`\`
+```
 
 The function should:
 
