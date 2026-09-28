@@ -37,3 +37,4 @@ content/en/m07/05-dictionaries.md
 content/en/m07/06-change-dictionaries.md
 content/en/m07/07-lists-and-dictionaries.md
 content/en/m07/08-exercises.md
+content/en/m08/01-why-files.md
