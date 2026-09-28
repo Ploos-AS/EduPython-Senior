@@ -37,3 +37,4 @@ content/no/m07/05-ordboker.md
 content/no/m07/06-endre-ordboker.md
 content/no/m07/07-lister-og-ordboker.md
 content/no/m07/08-oppgaver.md
+content/no/m08/01-hvorfor-filer.md
