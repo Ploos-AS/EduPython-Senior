@@ -64,7 +64,7 @@ Se [ROADMAP.md](ROADMAP.md).
 
 ## Lisens
 
-Dokumentasjon og kursinnhold er planlagt publisert under en Creative Commons-lisens. Kildekode og eksempler skal ha tydelig separat lisens der det er relevant.
+Kursinnhold og dokumentasjon er lisensiert under CC BY 4.0. Programvare, byggverktøy og kjørbare kodeeksempler er lisensiert under MIT. Se [LICENSES.md](LICENSES.md).
 
 ---
 
