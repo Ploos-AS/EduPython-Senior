@@ -38,7 +38,7 @@ $(DIST)/EduPython-Senior-EN.epub: $(EN_INPUTS) book/en.yaml book/epub.css
 	$(PANDOC) --metadata-file=book/en.yaml --css=book/epub.css --toc -o $@ $(EN_INPUTS)
 
 kindle: epub
-	@echo "Kindle profile uses the generated EPUB files; Kindle-specific validation follows in M0."
+	$(PYTHON) tools/check_kindle.py $(DIST)/EduPython-Senior-NO.epub $(DIST)/EduPython-Senior-EN.epub
 
 pdf: $(DIST)/EduPython-Senior-NO.pdf $(DIST)/EduPython-Senior-EN.pdf
 
