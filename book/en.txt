@@ -33,3 +33,4 @@ content/en/m07/01-lists.md
 content/en/m07/02-indexes.md
 content/en/m07/03-change-lists.md
 content/en/m07/04-length.md
+content/en/m07/05-dictionaries.md
