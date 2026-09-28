@@ -10,22 +10,22 @@ The goal is not to avoid every error. The goal is to read errors and find their 
 
 This program tries to read a file:
 
-\`\`\`python
+```python
 with open("measurements.txt", "r", encoding="utf-8") as file:
     content = file.read()
-\`\`\`
+```
 
 If Python cannot find the file, the error message can contain:
 
-\`\`\`text
+```text
 FileNotFoundError
-\`\`\`
+```
 
 The name tells us a lot:
 
-\`\`\`text
+```text
 File     Not Found     Error
-\`\`\`
+```
 
 The program requested a file that Python could not find at the specified path.
 
@@ -41,15 +41,15 @@ When you see \`FileNotFoundError\`, check:
 
 A small spelling error is enough:
 
-\`\`\`python
+```python
 open("temperature.txt", "r", encoding="utf-8")
-\`\`\`
+```
 
 if the file is actually named:
 
-\`\`\`text
+```text
 temperatures.txt
-\`\`\`
+```
 
 ## The path is part of the error
 
@@ -59,9 +59,9 @@ The file name or path tells Python where the program expects to find it.
 
 A simple name:
 
-\`\`\`text
+```text
 temperatures.txt
-\`\`\`
+```
 
 is a relative path.
 
@@ -89,7 +89,7 @@ Some programs need to handle a missing file.
 
 Then we can use \`try\` and \`except\`.
 
-\`\`\`python
+```python
 try:
     with open("notes.txt", "r", encoding="utf-8") as file:
         content = file.read()
@@ -97,23 +97,23 @@ try:
     print(content)
 except FileNotFoundError:
     print("Could not find notes.txt")
-\`\`\`
+```
 
 Python first tries the code under \`try\`.
 
 If specifically a \`FileNotFoundError\` occurs, Python runs the code under:
 
-\`\`\`python
+```python
 except FileNotFoundError:
-\`\`\`
+```
 
 ## Why do we name the error type?
 
 We use:
 
-\`\`\`python
+```python
 except FileNotFoundError:
-\`\`\`
+```
 
 rather than a general rule that hides every error.
 
@@ -137,14 +137,14 @@ If not, investigate why it is missing.
 
 We can combine this with functions:
 
-\`\`\`python
+```python
 def read_notes():
     try:
         with open("notes.txt", "r", encoding="utf-8") as file:
             return file.read()
     except FileNotFoundError:
         return "No notes file found."
-\`\`\`
+```
 
 The function returns either the file contents or a clear message.
 
@@ -182,9 +182,9 @@ If the file is missing, it should return a short, understandable message.
 
 Use only:
 
-\`\`\`python
+```python
 except FileNotFoundError:
-\`\`\`
+```
 
 not a general \`except\`.
 
