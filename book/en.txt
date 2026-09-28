@@ -1,2 +1,3 @@
 content/en/m00/01-welcome.md
 content/en/m01/01-instructions.md
+content/en/m01/02-build-a-small-program.md
