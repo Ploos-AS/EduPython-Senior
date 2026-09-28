@@ -6,9 +6,9 @@ For å åpne riktig fil må programmet vite **stien** til den.
 
 Så langt har vi brukt enkle stier som:
 
-\`\`\`text
+```text
 sample.txt
-\`\`\`
+```
 
 Nå skal vi også bruke mapper.
 
@@ -16,12 +16,12 @@ Nå skal vi også bruke mapper.
 
 Tenk at prosjektet ser slik ut:
 
-\`\`\`text
+```text
 mitt-program/
 ├── program.py
 └── data/
     └── steder.txt
-\`\`\`
+```
 
 Python-filen heter \`program.py\`.
 
@@ -29,9 +29,9 @@ Tekstfilen ligger i undermappen \`data\`.
 
 En relativ sti til tekstfilen kan skrives:
 
-\`\`\`text
+```text
 data/steder.txt
-\`\`\`
+```
 
 ## Hva betyr relativ sti?
 
@@ -39,9 +39,9 @@ En **relativ sti** beskriver et sted i forhold til et annet sted.
 
 Dette:
 
-\`\`\`text
+```text
 data/steder.txt
-\`\`\`
+```
 
 betyr omtrent:
 
@@ -57,9 +57,9 @@ Når Python starter et program, har prosessen en **nåværende arbeidsmappe**.
 
 Et enkelt kall som:
 
-\`\`\`python
+```python
 open("data/steder.txt", "r", encoding="utf-8")
-\`\`\`
+```
 
 tolkes i forhold til denne arbeidsmappen.
 
@@ -73,15 +73,15 @@ Python har standardbiblioteket \`pathlib\`.
 
 Der finner vi \`Path\`.
 
-\`\`\`python
+```python
 from pathlib import Path
-\`\`\`
+```
 
 Vi kan finne mappen der selve Python-filen ligger:
 
-\`\`\`python
+```python
 programmappe = Path(__file__).parent
-\`\`\`
+```
 
 Du trenger ikke kunne alle detaljene i \`__file__\` nå.
 
@@ -93,22 +93,22 @@ I dette mønsteret betyr det ganske enkelt:
 
 Vi kan kombinere mapper og filnavn med \`/\`:
 
-\`\`\`python
+```python
 from pathlib import Path
 
 programmappe = Path(__file__).parent
 filsti = programmappe / "data" / "steder.txt"
-\`\`\`
+```
 
 Dette bygger stien lag for lag:
 
-\`\`\`text
+```text
 programmappe
     │
     └── data
          │
          └── steder.txt
-\`\`\`
+```
 
 \`/\` betyr her ikke divisjon.
 
@@ -116,7 +116,7 @@ Når vi arbeider med \`Path\`, brukes det til å kombinere deler av en sti.
 
 ## Les filen
 
-\`\`\`python
+```python
 from pathlib import Path
 
 programmappe = Path(__file__).parent
@@ -125,7 +125,7 @@ filsti = programmappe / "data" / "steder.txt"
 with open(filsti, "r", encoding="utf-8") as fil:
     for linje in fil:
         print(linje.strip())
-\`\`\`
+```
 
 Programmet finner nå datafilen ut fra hvor \`program.py\` ligger, ikke ut fra hvilken arbeidsmappe vi tilfeldigvis startet Python fra.
 
@@ -133,9 +133,9 @@ Programmet finner nå datafilen ut fra hvor \`program.py\` ligger, ikke ut fra h
 
 Tenk at programmet ligger i:
 
-\`\`\`text
+```text
 kurs/m08/program.py
-\`\`\`
+```
 
 Du kan starte det fra forskjellige steder.
 
@@ -147,17 +147,17 @@ Dette gjør eksempler og små prosjekter mer forutsigbare.
 
 Variabelen:
 
-\`\`\`python
+```python
 filsti = programmappe / "data" / "steder.txt"
-\`\`\`
+```
 
 inneholder et \`Path\`-objekt.
 
 \`open()\` kan bruke dette direkte:
 
-\`\`\`python
+```python
 open(filsti, "r", encoding="utf-8")
-\`\`\`
+```
 
 Vi trenger altså ikke konvertere stien til tekst først.
 
@@ -165,23 +165,23 @@ Vi trenger altså ikke konvertere stien til tekst først.
 
 I:
 
-\`\`\`python
+```python
 Path(__file__).parent
-\`\`\`
+```
 
 betyr \`.parent\` mappen som inneholder filen.
 
 Hvis Python-filen er:
 
-\`\`\`text
+```text
 /home/anna/kurs/program.py
-\`\`\`
+```
 
 er parent-mappen:
 
-\`\`\`text
+```text
 /home/anna/kurs
-\`\`\`
+```
 
 Den nøyaktige stien vil naturligvis være forskjellig på forskjellige maskiner.
 
@@ -191,9 +191,9 @@ Det er nettopp derfor vi ikke skriver en bestemt brukers komplette sti inn i pro
 
 Dette kan virke på én bestemt maskin:
 
-\`\`\`python
+```python
 open("/home/anna/kurs/data/steder.txt", "r", encoding="utf-8")
-\`\`\`
+```
 
 men programmet blir bundet til den plasseringen.
 
@@ -205,15 +205,15 @@ Når datafilen følger programmet, er det ofte bedre å bygge stien relativt til
 
 Hvis vi bygger:
 
-\`\`\`python
+```python
 filsti = programmappe / "data" / "steder.txt"
-\`\`\`
+```
 
 men \`data\`-mappen eller filen ikke finnes, kan lesing fortsatt gi:
 
-\`\`\`text
+```text
 FileNotFoundError
-\`\`\`
+```
 
 En korrekt Python-sti kan altså fortsatt peke til noe som ikke finnes.
 
@@ -223,23 +223,23 @@ Bruk feilsøkingen fra M8.5.
 
 Lag denne strukturen:
 
-\`\`\`text
+```text
 øvelse/
 ├── program.py
 └── data/
     └── navn.txt
-\`\`\`
+```
 
 Legg noen navn i \`navn.txt\`.
 
 Bruk:
 
-\`\`\`python
+```python
 from pathlib import Path
 
 programmappe = Path(__file__).parent
 filsti = programmappe / "data" / "navn.txt"
-\`\`\`
+```
 
 Les filen linje for linje.
 
@@ -247,9 +247,9 @@ Les filen linje for linje.
 
 Lag en ny undermappe ved siden av programmet, for eksempel:
 
-\`\`\`text
+```text
 notater/
-\`\`\`
+```
 
 Legg en tekstfil i mappen.
 
