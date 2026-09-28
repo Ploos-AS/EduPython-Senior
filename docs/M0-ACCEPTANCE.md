@@ -4,9 +4,11 @@ Dato: 2026-09-28
 
 ## Resultat
 
-M0-grunnarkitekturen er operativ og den samlede publiseringskjeden er kvalifisert i GitHub Actions.
+**PASS**
 
-Kvalifisert CI-run: 36364570396.
+M0-grunnarkitekturen er operativ og hele den planlagte kvalitets- og publiseringskjeden er kvalifisert i GitHub Actions.
+
+Endelig kvalifisert CI-run: 36364822613.
 
 ## Verifisert
 
@@ -24,14 +26,15 @@ Kvalifisert CI-run: 36364570396.
 - [x] MIT brukes for programvare/kjørbare eksempler.
 - [x] CC BY 4.0 brukes for kursinnhold og dokumentasjon.
 
-## Fortsatt M0-arbeid
+## Kvalitetsgater
 
-- [ ] sterkere link/content-validering
-- [ ] EPUBCheck eller tilsvarende standardvalidering
-- [ ] eksplisitt accessibility/readability policy og automatiserbare kontroller
-- [ ] kvalifisere siste lisensendringer i CI
-- [ ] oppdatere ROADMAP/Issue #1 når alle gates er grønne
+- [x] lokal link/content-validering
+- [x] EPUBCheck-standardvalidering
+- [x] accessibility/readability-policy
+- [x] automatiserbare accessibility-kontroller
+- [x] lisensendringer kvalifisert i CI
+- [x] samlet sluttkvalifisering
 
 ## Konklusjon
 
-Publiseringsarkitekturen er kvalifisert: Web, EPUB, Kindle-profil og PDF fungerer fra den delte tospråklige kursbasen. M0 lukkes først når de gjenværende kvalitetsgatene over er implementert og grønne.
+M0 er **PASS**. Web, EPUB, Kindle-profil og PDF fungerer fra den delte tospråklige kursbasen, og alle planlagte M0-kvalitetsgater er grønne.
