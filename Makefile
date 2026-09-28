@@ -31,8 +31,15 @@ $(DIST)/EduPython-Senior-EN.epub: $(EN_INPUTS) book/en.yaml book/epub.css
 kindle: epub
 	@echo "Kindle profile uses the generated EPUB files; Kindle-specific validation follows in M0."
 
-pdf:
-	@echo "Print-quality PDF renderer follows after EPUB qualification."
+pdf: $(DIST)/EduPython-Senior-NO.pdf $(DIST)/EduPython-Senior-EN.pdf
+
+$(DIST)/EduPython-Senior-NO.pdf: $(NO_INPUTS) book/no.yaml
+	mkdir -p $(DIST)
+	$(PANDOC) --metadata-file=book/no.yaml --toc --pdf-engine=xelatex -V papersize:a4 -V geometry:margin=25mm -V fontsize=12pt -V linestretch=1.15 -o $@ $(NO_INPUTS)
+
+$(DIST)/EduPython-Senior-EN.pdf: $(EN_INPUTS) book/en.yaml
+	mkdir -p $(DIST)
+	$(PANDOC) --metadata-file=book/en.yaml --toc --pdf-engine=xelatex -V papersize:a4 -V geometry:margin=25mm -V fontsize=12pt -V linestretch=1.15 -o $@ $(EN_INPUTS)
 
 books: epub kindle pdf
 
