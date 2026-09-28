@@ -15,7 +15,7 @@ Now we put the pieces together.
 
 A useful pattern is:
 
-\`\`\`text
+```text
 file
  ↓
 reading function
@@ -29,7 +29,7 @@ result
 writing function
  ↓
 new file
-\`\`\`
+```
 
 Each part has one clear job.
 
@@ -37,12 +37,12 @@ Each part has one clear job.
 
 Imagine that \`measurements.txt\` contains:
 
-\`\`\`text
+```text
 12
 15
 11
 14
-\`\`\`
+```
 
 We want to:
 
@@ -53,7 +53,7 @@ We want to:
 
 ## Read the file into a list
 
-\`\`\`python
+```python
 def read_measurements(file_path):
     measurements = []
 
@@ -63,33 +63,33 @@ def read_measurements(file_path):
             measurements.append(value)
 
     return measurements
-\`\`\`
+```
 
 Follow the data:
 
 First:
 
-\`\`\`python
+```python
 measurements = []
-\`\`\`
+```
 
 After the first line:
 
-\`\`\`python
+```python
 measurements = [12]
-\`\`\`
+```
 
 After the second:
 
-\`\`\`python
+```python
 measurements = [12, 15]
-\`\`\`
+```
 
 Finally:
 
-\`\`\`python
+```python
 measurements = [12, 15, 11, 14]
-\`\`\`
+```
 
 The function returns the list.
 
@@ -97,9 +97,9 @@ The function returns the list.
 
 Notice:
 
-\`\`\`python
+```python
 def read_measurements(file_path):
-\`\`\`
+```
 
 The function does not decide on one specific file name itself.
 
@@ -111,7 +111,7 @@ That makes the function easier to reuse with other practice files later.
 
 File handling does not need to be part of the calculation.
 
-\`\`\`python
+```python
 def calculate_total(measurements):
     total = 0
 
@@ -119,7 +119,7 @@ def calculate_total(measurements):
         total = total + measurement
 
     return total
-\`\`\`
+```
 
 This function knows nothing about files.
 
@@ -127,30 +127,30 @@ It receives a list and returns a number.
 
 That makes the responsibilities clear:
 
-\`\`\`text
+```text
 read_measurements() → file to list
 calculate_total()   → list to number
-\`\`\`
+```
 
 ## Write the result
 
-\`\`\`python
+```python
 def write_result(file_path, total):
     with open(file_path, "w", encoding="utf-8") as file:
         file.write("Total: " + str(total) + "\n")
-\`\`\`
+```
 
 This function has another responsibility:
 
-\`\`\`text
+```text
 write_result() → value to file
-\`\`\`
+```
 
 ## Put the pieces together
 
 With \`Path\`, the main part of the program can look like:
 
-\`\`\`python
+```python
 from pathlib import Path
 
 program_folder = Path(__file__).parent
@@ -163,11 +163,11 @@ write_result(output_file, total)
 
 print("Measurements:", measurements)
 print("Total:", total)
-\`\`\`
+```
 
 The data flow is:
 
-\`\`\`text
+```text
 measurements.txt
        ↓
 [12, 15, 11, 14]
@@ -175,7 +175,7 @@ measurements.txt
 52
        ↓
 result.txt
-\`\`\`
+```
 
 ## Why use several functions?
 
@@ -198,16 +198,16 @@ This makes debugging easier.
 
 We can print the list before calculating:
 
-\`\`\`python
+```python
 measurements = read_measurements(input_file)
 print(measurements)
-\`\`\`
+```
 
 If the result is:
 
-\`\`\`text
+```text
 [12, 15, 11, 14]
-\`\`\`
+```
 
 we know that the reading and conversion look correct.
 
@@ -219,17 +219,17 @@ This is a useful way to debug a data flow: check one intermediate result at a ti
 
 If the file contains:
 
-\`\`\`text
+```text
 12
 fifteen
 11
-\`\`\`
+```
 
 then:
 
-\`\`\`python
+```python
 int("fifteen")
-\`\`\`
+```
 
 produces \`ValueError\`.
 
@@ -255,7 +255,7 @@ Use a file containing four integers.
 
 Create a small program with three functions:
 
-\`\`\`python
+```python
 def read_data(file_path):
     ...
 
@@ -264,7 +264,7 @@ def calculate(data):
 
 def write_result(file_path, result):
     ...
-\`\`\`
+```
 
 Use your own practice file with one integer per line.
 
