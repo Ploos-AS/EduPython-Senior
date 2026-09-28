@@ -15,7 +15,7 @@ Nå setter vi delene sammen.
 
 Et nyttig mønster er:
 
-\`\`\`text
+```text
 fil
  ↓
 lesefunksjon
@@ -29,7 +29,7 @@ resultat
 skrivefunksjon
  ↓
 ny fil
-\`\`\`
+```
 
 Hver del har én tydelig oppgave.
 
@@ -37,12 +37,12 @@ Hver del har én tydelig oppgave.
 
 Tenk at \`målinger.txt\` inneholder:
 
-\`\`\`text
+```text
 12
 15
 11
 14
-\`\`\`
+```
 
 Vi vil:
 
@@ -53,7 +53,7 @@ Vi vil:
 
 ## Les filen inn i en liste
 
-\`\`\`python
+```python
 def les_målinger(filsti):
     målinger = []
 
@@ -63,33 +63,33 @@ def les_målinger(filsti):
             målinger.append(verdi)
 
     return målinger
-\`\`\`
+```
 
 Følg dataene:
 
 Først:
 
-\`\`\`python
+```python
 målinger = []
-\`\`\`
+```
 
 Etter første linje:
 
-\`\`\`python
+```python
 målinger = [12]
-\`\`\`
+```
 
 Etter andre:
 
-\`\`\`python
+```python
 målinger = [12, 15]
-\`\`\`
+```
 
 Til slutt:
 
-\`\`\`python
+```python
 målinger = [12, 15, 11, 14]
-\`\`\`
+```
 
 Funksjonen returnerer listen.
 
@@ -97,9 +97,9 @@ Funksjonen returnerer listen.
 
 Legg merke til:
 
-\`\`\`python
+```python
 def les_målinger(filsti):
-\`\`\`
+```
 
 Funksjonen bestemmer ikke selv hvilket bestemt filnavn som skal brukes.
 
@@ -111,7 +111,7 @@ Det gjør funksjonen lettere å bruke med andre øvingsfiler senere.
 
 Filbehandlingen trenger ikke være en del av beregningen.
 
-\`\`\`python
+```python
 def beregn_total(målinger):
     total = 0
 
@@ -119,7 +119,7 @@ def beregn_total(målinger):
         total = total + måling
 
     return total
-\`\`\`
+```
 
 Denne funksjonen vet ingenting om filer.
 
@@ -127,30 +127,30 @@ Den får en liste og returnerer et tall.
 
 Det gjør ansvaret tydelig:
 
-\`\`\`text
+```text
 les_målinger()   → fil til liste
 beregn_total()   → liste til tall
-\`\`\`
+```
 
 ## Skriv resultatet
 
-\`\`\`python
+```python
 def skriv_resultat(filsti, total):
     with open(filsti, "w", encoding="utf-8") as fil:
         fil.write("Total: " + str(total) + "\n")
-\`\`\`
+```
 
 Denne funksjonen har ett annet ansvar:
 
-\`\`\`text
+```text
 skriv_resultat() → verdi til fil
-\`\`\`
+```
 
 ## Sett delene sammen
 
 Med \`Path\` kan hoveddelen av programmet se slik ut:
 
-\`\`\`python
+```python
 from pathlib import Path
 
 programmappe = Path(__file__).parent
@@ -163,11 +163,11 @@ skriv_resultat(utfil, total)
 
 print("Målinger:", målinger)
 print("Total:", total)
-\`\`\`
+```
 
 Dataflyten er:
 
-\`\`\`text
+```text
 målinger.txt
      ↓
 [12, 15, 11, 14]
@@ -175,7 +175,7 @@ målinger.txt
 52
      ↓
 resultat.txt
-\`\`\`
+```
 
 ## Hvorfor bruke flere funksjoner?
 
@@ -198,16 +198,16 @@ Dette gjør feilsøking enklere.
 
 Vi kan skrive ut listen før beregningen:
 
-\`\`\`python
+```python
 målinger = les_målinger(innfil)
 print(målinger)
-\`\`\`
+```
 
 Hvis resultatet er:
 
-\`\`\`text
+```text
 [12, 15, 11, 14]
-\`\`\`
+```
 
 vet vi at lesingen og konverteringen ser riktig ut.
 
@@ -219,17 +219,17 @@ Dette er en nyttig måte å feilsøke en dataflyt på: kontroller ett mellomresu
 
 Hvis filen inneholder:
 
-\`\`\`text
+```text
 12
 femten
 11
-\`\`\`
+```
 
 vil:
 
-\`\`\`python
+```python
 int("femten")
-\`\`\`
+```
 
 gi \`ValueError\`.
 
@@ -255,7 +255,7 @@ Bruk en fil med fire heltall.
 
 Lag et lite program med tre funksjoner:
 
-\`\`\`python
+```python
 def les_data(filsti):
     ...
 
@@ -264,7 +264,7 @@ def beregn(data):
 
 def skriv_resultat(filsti, resultat):
     ...
-\`\`\`
+```
 
 Bruk en egen øvingsfil med ett heltall per linje.
 
