@@ -12,3 +12,4 @@ content/en/m03/04-exercises.md
 content/en/m04/01-if.md
 content/en/m04/02-else.md
 content/en/m04/03-elif.md
+content/en/m04/04-logical-operators.md
