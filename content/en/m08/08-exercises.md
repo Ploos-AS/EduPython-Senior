@@ -35,9 +35,9 @@ Also count how many numbers the file contains.
 
 The program should read \`data/names.txt\`, but produces:
 
-\`\`\`text
+```text
 FileNotFoundError
-\`\`\`
+```
 
 Investigate in this order:
 
@@ -61,11 +61,11 @@ C. An existing text file should only be read.
 
 Answer with one of:
 
-\`\`\`text
+```text
 "r"
 "w"
 "a"
-\`\`\`
+```
 
 Explain why.
 
@@ -73,19 +73,19 @@ Explain why.
 
 The file initially contains:
 
-\`\`\`text
+```text
 Start
-\`\`\`
+```
 
 The program runs:
 
-\`\`\`python
+```python
 with open("log.txt", "a", encoding="utf-8") as file:
     file.write("Check\n")
 
 with open("log.txt", "a", encoding="utf-8") as file:
     file.write("Finished\n")
-\`\`\`
+```
 
 Write down what you think the file contains afterwards.
 
@@ -95,19 +95,19 @@ Then run the program and check your answer.
 
 Create:
 
-\`\`\`python
+```python
 def read_numbers(file_path):
     ...
-\`\`\`
+```
 
 The function should read one integer per line and return a list.
 
 Then create:
 
-\`\`\`python
+```python
 def calculate_total(numbers):
     ...
-\`\`\`
+```
 
 It should return the total without reading any file.
 
@@ -121,33 +121,33 @@ The program uses a controlled text file that belongs to the project.
 
 Each line contains one integer:
 
-\`\`\`text
+```text
 12
 15
 11
 14
-\`\`\`
+```
 
 ## Part 1 – Locate the files
 
 Use \`Path\`:
 
-\`\`\`python
+```python
 from pathlib import Path
 
 program_folder = Path(__file__).parent
 data_file = program_folder / "data" / "measurements.txt"
 report_file = program_folder / "report.txt"
-\`\`\`
+```
 
 ## Part 2 – Read the history
 
 Create:
 
-\`\`\`python
+```python
 def read_measurements(file_path):
     ...
-\`\`\`
+```
 
 The function should:
 
@@ -162,10 +162,10 @@ The function should:
 
 Create:
 
-\`\`\`python
+```python
 def add_measurement(file_path, value):
     ...
-\`\`\`
+```
 
 Use \`"a"\`.
 
@@ -183,26 +183,26 @@ Keep the calculation separate from file reading.
 
 Create:
 
-\`\`\`python
+```python
 def write_report(file_path, count, total):
     ...
-\`\`\`
+```
 
 The report might look like:
 
-\`\`\`text
+```text
 Number of measurements: 5
 Total: 65
-\`\`\`
+```
 
 The report represents the current result, so it can be written with \`"w"\`.
 
 The history file and report file therefore have different needs:
 
-\`\`\`text
+```text
 measurements.txt → "a" → preserve history
 report.txt       → "w" → rebuild current report
-\`\`\`
+```
 
 ## Part 6 – Read the report back
 
@@ -228,11 +228,11 @@ Then fix the cause.
 
 This program contains a logical error:
 
-\`\`\`python
+```python
 def save(file_path, value):
     with open(file_path, "w", encoding="utf-8") as file:
         file.write(str(value) + "\n")
-\`\`\`
+```
 
 The program calls \`save()\` whenever a new historical measurement arrives.
 
@@ -244,7 +244,7 @@ Which mode is more appropriate when the history should be preserved?
 
 You should now be able to explain the difference between:
 
-\`\`\`text
+```text
 file contents
 file path
 working directory
@@ -256,7 +256,7 @@ read()
 write()
 FileNotFoundError
 ValueError
-\`\`\`
+```
 
 You do not need to remember every piece of syntax by heart.
 
