@@ -11,3 +11,4 @@ content/no/m03/03-interaktivt-program.md
 content/no/m03/04-oppgaver.md
 content/no/m04/01-if.md
 content/no/m04/02-else.md
+content/no/m04/03-elif.md
