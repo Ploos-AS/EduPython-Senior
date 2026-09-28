@@ -13,6 +13,7 @@ stdin_by_example = {
     "examples/m04/first_if.py": "-5\n",
     "examples/m04/if_else.py": "0\n",
     "examples/m04/if_elif_else.py": "20\n",
+    "examples/m04/logical_operators.py": "15\n",
 }
 
 for path in files:
