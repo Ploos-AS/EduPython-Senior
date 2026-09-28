@@ -18,7 +18,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install publishing tools
-        run: sudo apt-get update && sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended epubcheck
+        run: sudo apt-get update && sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended fonts-dejavu-core epubcheck
       - name: Validate course and examples
         run: make check
       - name: Build web editions
