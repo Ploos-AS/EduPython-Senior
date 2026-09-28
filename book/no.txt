@@ -4,3 +4,4 @@ content/no/m01/02-lag-et-lite-program.md
 content/no/m01/03-oppgaver.md
 content/no/m02/01-variabler.md
 content/no/m02/02-praktisk-program.md
+content/no/m02/03-oppgaver.md
