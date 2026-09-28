@@ -32,26 +32,9 @@ jobs:
       - name: Validate Kindle profile
         run: make kindle
       - name: Build Norwegian PDF
-        id: pdf_no
-        continue-on-error: true
-        run: |
-          make dist/EduPython-Senior-NO.pdf > pdf-no.log 2>&1
+        run: make dist/EduPython-Senior-NO.pdf
       - name: Build English PDF
-        id: pdf_en
-        continue-on-error: true
-        run: |
-          make dist/EduPython-Senior-EN.pdf > pdf-en.log 2>&1
-      - name: Upload PDF diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: pdf-diagnostics
-          path: |
-            pdf-no.log
-            pdf-en.log
-      - name: Require PDF builds
-        if: steps.pdf_no.outcome != 'success' || steps.pdf_en.outcome != 'success'
-        run: exit 1
+        run: make dist/EduPython-Senior-EN.pdf
       - name: Verify EPUB and PDF artifacts
         run: |
           test -s dist/web/no/index.html
