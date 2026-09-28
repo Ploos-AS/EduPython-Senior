@@ -79,7 +79,7 @@ fil.write("Ny oppføring")
 
 legger ikke automatisk til et linjeskift.
 
-Hvis neste oppføring også mangler \`\n\`, kan resultatet bli:
+Hvis neste oppføring også mangler escape-sekvensen for linjeskift, kan resultatet bli:
 
 \`\`\`text
 Ny oppføringNeste oppføring
@@ -202,7 +202,7 @@ Funksjonen skal:
 
 1. åpne en egen øvingsfil med \`"a"\`
 2. skrive notatet
-3. legge til \`\n\`
+3. legge til escape-sekvensen for linjeskift
 
 Kall funksjonen minst tre ganger.
 
