@@ -35,9 +35,9 @@ Tell samtidig hvor mange tall filen inneholder.
 
 Programmet skal lese \`data/navn.txt\`, men gir:
 
-\`\`\`text
+```text
 FileNotFoundError
-\`\`\`
+```
 
 Undersøk i denne rekkefølgen:
 
@@ -61,11 +61,11 @@ C. En eksisterende tekstfil skal bare leses.
 
 Svar med én av:
 
-\`\`\`text
+```text
 "r"
 "w"
 "a"
-\`\`\`
+```
 
 Forklar hvorfor.
 
@@ -73,19 +73,19 @@ Forklar hvorfor.
 
 Filen inneholder først:
 
-\`\`\`text
+```text
 Start
-\`\`\`
+```
 
 Programmet kjører:
 
-\`\`\`python
+```python
 with open("logg.txt", "a", encoding="utf-8") as fil:
     fil.write("Kontroll\n")
 
 with open("logg.txt", "a", encoding="utf-8") as fil:
     fil.write("Ferdig\n")
-\`\`\`
+```
 
 Skriv ned hva du tror filen inneholder etterpå.
 
@@ -95,19 +95,19 @@ Kjør deretter programmet og kontroller svaret.
 
 Lag:
 
-\`\`\`python
+```python
 def les_tall(filsti):
     ...
-\`\`\`
+```
 
 Funksjonen skal lese ett heltall per linje og returnere en liste.
 
 Lag deretter:
 
-\`\`\`python
+```python
 def beregn_total(tall):
     ...
-\`\`\`
+```
 
 Den skal returnere summen uten å lese noen fil.
 
@@ -121,33 +121,33 @@ Programmet bruker en kontrollert tekstfil som tilhører prosjektet.
 
 Hver linje inneholder ett heltall:
 
-\`\`\`text
+```text
 12
 15
 11
 14
-\`\`\`
+```
 
 ## Del 1 – Finn filene
 
 Bruk \`Path\`:
 
-\`\`\`python
+```python
 from pathlib import Path
 
 programmappe = Path(__file__).parent
 datafil = programmappe / "data" / "målinger.txt"
 rapportfil = programmappe / "rapport.txt"
-\`\`\`
+```
 
 ## Del 2 – Les historikken
 
 Lag:
 
-\`\`\`python
+```python
 def les_målinger(filsti):
     ...
-\`\`\`
+```
 
 Funksjonen skal:
 
@@ -162,10 +162,10 @@ Funksjonen skal:
 
 Lag:
 
-\`\`\`python
+```python
 def legg_til_måling(filsti, verdi):
     ...
-\`\`\`
+```
 
 Bruk \`"a"\`.
 
@@ -183,26 +183,26 @@ Hold beregningen adskilt fra filinnlesingen.
 
 Lag:
 
-\`\`\`python
+```python
 def skriv_rapport(filsti, antall, total):
     ...
-\`\`\`
+```
 
 Rapporten kan for eksempel bli:
 
-\`\`\`text
+```text
 Antall målinger: 5
 Total: 65
-\`\`\`
+```
 
 Rapporten representerer gjeldende resultat og kan derfor skrives med \`"w"\`.
 
 Historikkfilen og rapportfilen har altså forskjellige behov:
 
-\`\`\`text
+```text
 målinger.txt → "a" → behold historikken
 rapport.txt  → "w" → bygg gjeldende rapport på nytt
-\`\`\`
+```
 
 ## Del 6 – Les rapporten tilbake
 
@@ -228,11 +228,11 @@ Rett deretter årsaken.
 
 Dette programmet har en logisk feil:
 
-\`\`\`python
+```python
 def lagre(filsti, verdi):
     with open(filsti, "w", encoding="utf-8") as fil:
         fil.write(str(verdi) + "\n")
-\`\`\`
+```
 
 Programmet kaller \`lagre()\` hver gang en ny historisk måling kommer.
 
@@ -244,7 +244,7 @@ Hvilken modus passer bedre når historikken skal bevares?
 
 Du bør nå kunne forklare forskjellen mellom:
 
-\`\`\`text
+```text
 filinnhold
 filsti
 arbeidsmappe
@@ -256,7 +256,7 @@ read()
 write()
 FileNotFoundError
 ValueError
-\`\`\`
+```
 
 Du trenger ikke huske all syntaks utenat.
 
