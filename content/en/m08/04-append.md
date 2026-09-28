@@ -79,7 +79,7 @@ file.write("New entry")
 
 does not automatically add a newline.
 
-If the next entry also lacks \`\n\`, the result can be:
+If the next entry also lacks the newline escape sequence, the result can be:
 
 \`\`\`text
 New entryNext entry
@@ -202,7 +202,7 @@ The function should:
 
 1. open a dedicated practice file with \`"a"\`
 2. write the note
-3. add \`\n\`
+3. add the newline escape sequence
 
 Call the function at least three times.
 
