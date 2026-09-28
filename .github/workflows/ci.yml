@@ -31,8 +31,10 @@ jobs:
           epubcheck dist/EduPython-Senior-EN.epub
       - name: Validate Kindle profile
         run: make kindle
-      - name: Build PDF editions
-        run: make pdf
+      - name: Build Norwegian PDF
+        run: make dist/EduPython-Senior-NO.pdf
+      - name: Build English PDF
+        run: make dist/EduPython-Senior-EN.pdf
       - name: Verify EPUB and PDF artifacts
         run: |
           test -s dist/web/no/index.html
