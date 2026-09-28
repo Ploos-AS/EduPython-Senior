@@ -8,9 +8,9 @@ Nå skal programmet lage en fil.
 
 Når vi åpner en fil med:
 
-\`\`\`python
+```python
 "w"
-\`\`\`
+```
 
 betyr det **write** – skriv.
 
@@ -24,10 +24,10 @@ Ikke bruk navnet på et viktig dokument når du eksperimenterer med \`"w"\`.
 
 ## Prøv det
 
-\`\`\`python
+```python
 with open("resultat.txt", "w", encoding="utf-8") as fil:
     fil.write("Dette er skrevet av Python.\n")
-\`\`\`
+```
 
 Når programmet er ferdig, finnes filen \`resultat.txt\`.
 
@@ -35,38 +35,38 @@ Når programmet er ferdig, finnes filen \`resultat.txt\`.
 
 Du skal se:
 
-\`\`\`text
+```text
 Dette er skrevet av Python.
-\`\`\`
+```
 
 ## Samme mønster som ved lesing
 
 Ved lesing brukte vi:
 
-\`\`\`python
+```python
 with open("sample.txt", "r", encoding="utf-8") as fil:
-\`\`\`
+```
 
 Ved skriving bruker vi:
 
-\`\`\`python
+```python
 with open("resultat.txt", "w", encoding="utf-8") as fil:
-\`\`\`
+```
 
 Forskjellen er modusen:
 
-\`\`\`text
+```text
 "r" → read  → les
 "w" → write → skriv
-\`\`\`
+```
 
 ## write()
 
 Denne linjen:
 
-\`\`\`python
+```python
 fil.write("Dette er skrevet av Python.\n")
-\`\`\`
+```
 
 skriver tekst til filen.
 
@@ -78,32 +78,32 @@ Hvis vi vil starte en ny linje, må vi derfor skrive linjeskiftet selv.
 
 ## Skriv flere linjer
 
-\`\`\`python
+```python
 with open("resultat.txt", "w", encoding="utf-8") as fil:
     fil.write("Mandag\n")
     fil.write("Tirsdag\n")
     fil.write("Onsdag\n")
-\`\`\`
+```
 
 Filen blir:
 
-\`\`\`text
+```text
 Mandag
 Tirsdag
 Onsdag
-\`\`\`
+```
 
 ## Skriv verdier fra en liste
 
 Vi kan kombinere filskriving med det vi lærte i M7:
 
-\`\`\`python
+```python
 steder = ["Tonstad", "Grimstad", "Oslo"]
 
 with open("steder.txt", "w", encoding="utf-8") as fil:
     for sted in steder:
         fil.write(sted + "\n")
-\`\`\`
+```
 
 Nå blir hvert element skrevet på sin egen linje.
 
@@ -113,17 +113,17 @@ Nå blir hvert element skrevet på sin egen linje.
 
 Dette virker derfor ikke:
 
-\`\`\`python
+```python
 antall = 3
 fil.write(antall)
-\`\`\`
+```
 
 Vi må konvertere tallet:
 
-\`\`\`python
+```python
 antall = 3
 fil.write(str(antall))
-\`\`\`
+```
 
 Dette er samme idé som tidligere: Python skiller mellom tall og tekst.
 
@@ -135,7 +135,7 @@ En nyttig måte å kontrollere et lite program på er:
 2. åpne den for lesing
 3. se hva som faktisk ble lagret
 
-\`\`\`python
+```python
 with open("resultat.txt", "w", encoding="utf-8") as fil:
     fil.write("Linje én\n")
     fil.write("Linje to\n")
@@ -144,7 +144,7 @@ with open("resultat.txt", "r", encoding="utf-8") as fil:
     innhold = fil.read()
 
 print(innhold)
-\`\`\`
+```
 
 Den første \`with\`-blokken skriver.
 
@@ -154,22 +154,22 @@ Den andre leser.
 
 Tenk at \`resultat.txt\` inneholder:
 
-\`\`\`text
+```text
 Gammel tekst
-\`\`\`
+```
 
 Så kjører vi:
 
-\`\`\`python
+```python
 with open("resultat.txt", "w", encoding="utf-8") as fil:
     fil.write("Ny tekst\n")
-\`\`\`
+```
 
 Etterpå inneholder filen:
 
-\`\`\`text
+```text
 Ny tekst
-\`\`\`
+```
 
 Den gamle teksten er borte.
 
@@ -189,9 +189,9 @@ Senere lærer vi hvordan vi kan legge til innhold uten å erstatte det gamle.
 
 Lag en liste:
 
-\`\`\`python
+```python
 oppgaver = ["Handle", "Ringe banken", "Lese"]
-\`\`\`
+```
 
 Skriv hvert element til \`oppgaver.txt\`, ett element per linje.
 
