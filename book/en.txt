@@ -22,3 +22,4 @@ content/en/m05/04-build-result.md
 content/en/m05/05-while.md
 content/en/m05/06-practical-program.md
 content/en/m05/07-exercises.md
+content/en/m06/01-functions.md
