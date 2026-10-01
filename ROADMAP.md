@@ -1,6 +1,6 @@
 # EduPython-Senior Roadmap
 
-Status: M0 Foundation **PASS** · M1 First instructions **PASS** · M2 Variables **PASS** · M3 Input **PASS** · M4 Decisions **PASS** · M5 Loops **PASS** · M6 Functions **PASS** · M7 Collections **PASS** · M8 Files **PASS**. M9 CSV/simple data is the active milestone.
+Status: M0 Foundation **PASS** · M1 First instructions **PASS** · M2 Variables **PASS** · M3 Input **PASS** · M4 Decisions **PASS** · M5 Loops **PASS** · M6 Functions **PASS** · M7 Collections **PASS** · M8 Files **PASS** · M9 CSV/simple data **PASS**. M10 Practical projects is the active milestone.
 
 ## M0 — Foundation
 
